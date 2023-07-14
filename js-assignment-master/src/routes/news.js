@@ -4,7 +4,6 @@ module.exports = function (app) {
   app.route('/tour/news/').post(async (req, res, next) => {
     try {
       const { title, description, tourId } = req.body || {};
-      console.log(req.body);
       return res.json(
         await newsController.createNewsByTourId({ title, description, tourId })
       );
@@ -16,7 +15,6 @@ module.exports = function (app) {
   app.route('/match/news/').post(async (req, res, next) => {
     try {
       const { title, description, matchId } = req.body || {};
-      console.log(req.body);
       return res.json(
         await newsController.createNewsByMatchId({
           title,

@@ -3,9 +3,7 @@ const mysql = require('../lib/mysql');
 const createNews = async ({ title, description }) => {
   const statement = `insert into mydb.news (title, description) values (?, ?)`;
   const parameters = [title, description];
-  return await mysql.query(statement, parameters, (err, result) => {
-    console.log(result, '============');
-  });
+  return await mysql.query(statement, parameters);
 };
 
 const getMatchesByTourId = async ({ tourId }) => {
